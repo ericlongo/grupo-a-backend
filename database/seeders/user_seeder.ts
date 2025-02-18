@@ -4,20 +4,12 @@ import hash from '@adonisjs/core/services/hash'
 
 export default class extends BaseSeeder {
   async run() {
-    const usersData = [
-      {
-        email: 'admin@maisedu.com.br',
-        password: '123456', 
-      }
-    ]
+    const hashedPassword = await hash.make('123456')
 
-    for (const userData of usersData) {
-      const hashedPassword = await hash.make(userData.password)
-
-      await User.create({
-        email: userData.email,
-        password: hashedPassword, 
-      })
-    }
+    await User.create({
+      name: 'Admin',
+      email: 'admin@maisedu.com.br',
+      password: hashedPassword, 
+    })
   }
 }
