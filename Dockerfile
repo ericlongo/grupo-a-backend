@@ -9,7 +9,7 @@ COPY package*.json ./
 
 # Instala as dependências do projeto
 RUN npm install
-RUN npm install @adonisjs/hash
+RUN npm add @adonisjs/hash
 
 # Copia todos os arquivos do projeto para o diretório de trabalho
 COPY . .
