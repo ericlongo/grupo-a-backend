@@ -19,6 +19,15 @@ Para rodar o projeto localmente utilizando Docker, siga os passos abaixo:
 
    ```bash
    docker-compose up --build
+3. Para entrar no containner:
+
+   ```bash
+    docker exec -it back-end-app-1 bash
+4. Para confirmar a conexão com o banco de dados, após estar no container
+
+   ```bash
+   node teste-db.js
+    
 O projeto estará disponível em http://localhost:3333 (ou na porta configurada no docker-compose.yml).
 
 ### Sem utilizar Docker
@@ -31,7 +40,6 @@ O projeto estará disponível em http://localhost:3333 (ou na porta configurada 
 
    ```bash
    node ace serve --hmr
-
 
 O projeto estará disponível em http://localhost:3333 (ou na porta configurada no docker-compose.yml).
 

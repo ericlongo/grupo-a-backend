@@ -24,10 +24,29 @@ export class StudentService {
         }
         
         return student;
+  }
+
+  public async deleteStudent(id: number): Promise<boolean> {
+    const student = await Student.findBy('id', id);
+    if(student != null) {
+      await student.delete();
+      return true;
     }
+    return false;
+  }
+
+  public async findById(id: number): Promise<Student | null> {
+    const student = await Student.findBy('id', id);
+    return student;
+  }
 
   public async findByRa(ra: string): Promise<Student | null> {
     const student = await Student.findBy('ra', ra);
+    return student;
+  }
+
+  public async findByCpf(cpf: string): Promise<Student | null> {
+    const student = await Student.findBy('cpf', cpf.replace(/[^\d]+/g, ''));
     return student;
   }
 
