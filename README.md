@@ -27,6 +27,7 @@ Para rodar o projeto localmente utilizando Docker, siga os passos abaixo:
 
    ```bash
    node teste-db.js
+5. Copie o .env.example para .env
     
 O projeto estará disponível em http://localhost:3333 (ou na porta configurada no docker-compose.yml).
 
@@ -40,7 +41,12 @@ O projeto estará disponível em http://localhost:3333 (ou na porta configurada 
 
    ```bash
    node ace serve --hmr
+3. Copie o .env.example para .env
 
 O projeto estará disponível em http://localhost:3333 (ou na porta configurada no docker-compose.yml).
 
+## Acesso
+
+Usuário: admin@maisedu.com.br
+Senha: 123456
    

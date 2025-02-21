@@ -31,6 +31,15 @@ export default class StudentController {
             }
             return response.abort({ data });
         }
+
+        const existsEmailStudent = await this.studentService.findByEmail(email);
+        if(existsEmailStudent != null) {
+            const data = {
+                status: 422,
+                message: 'Email já cadastrado na base de alunos.'
+            }
+            return response.abort({ data });
+        }
         
         const existsEmailStudent = await this.studentService.findByEmail(email);
         if(existsEmailStudent != null) {
