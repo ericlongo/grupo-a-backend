@@ -50,6 +50,11 @@ export class StudentService {
     return student;
   }
 
+  public async findByEmail(email: string): Promise<Student | null> {
+    const student = await Student.findBy('email', email);
+    return student;
+  }
+
   private async generateRa(): Promise<string> {
       const ra =  Math.floor(100000 + Math.random() * 900000).toString();
       const student = await this.findByRa(ra);
